@@ -1,4 +1,4 @@
-#!/bin/sh -eix
+#!/bin/sh -ex
 
 email="my@email.com" # The email address for your RightScale 
 pswd="password" # Your User's password 
