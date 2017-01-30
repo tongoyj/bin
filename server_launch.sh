@@ -8,8 +8,19 @@ curl -v -S -s -i -H X_API_VERSION:1.5 -c mycookie -X POST -d "email=$email" -d "
 
 sleep 5
 
-echo "Launching Server Now..."
+read -p "Launch a Server? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
 
 curl -i -H X_API_VERSION:1.5 -b mycookie -X POST https://my.rightscale.com/api/servers/1059099003/launch.xml
 
-echo "Server is booting and will be operational shortly..."
+echo "Launching Server...."
+
+else
+
+echo "You just authenticated via curl... Bye for now..."
+
+fi
+
+
